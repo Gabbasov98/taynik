@@ -1,0 +1,39 @@
+@import "../vars";
+.mbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-out .225s;
+    padding: 0;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.mbtn-red{
+    color: #fff;
+    background-color: $red;
+    &:hover{
+        color: #fff;
+        background-color: darken($red, 15%);
+    }
+}
+
+.mbtn-green{
+    color: #fff;
+    background-color: $primary;
+    &:hover{
+        color: #fff;
+        background-color: darken($primary, 15%);
+    }
+}
+
+.mbtn-green-outline{
+    color: $primary;
+    border: 1.14811px solid $primary;
+    &:hover{
+        background-color: $primary;
+        color: #fff;
+    }
+}
