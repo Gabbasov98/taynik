@@ -169,6 +169,8 @@
     align-items: center;
     flex-grow: 1;
   }
+  &__info,
+  &__lk,
   &__burger {
     display: none;
   }
@@ -259,6 +261,10 @@
       margin-bottom: 15px;
     }
   }
+  &__lk{
+    display: none;
+  }
+
 }
 
 .nav{
@@ -323,6 +329,7 @@
     }
     &__logo{
       width: 90px;
+      margin: 0;
     }
     &__search{
       order: 2;
@@ -403,7 +410,8 @@
       }
     }
     &__sale,
-    &__cart {
+    &__cart,
+    &__lk{
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -416,6 +424,7 @@
         font-weight: 400;
       }
     }
+    &__lk,
     &__sale{
       padding: 0;
       &-top{
@@ -429,9 +438,50 @@
         margin: 0;
       }
     }
+    &__sale{
+      display: none;
+    }
+    &__lk{
+      &-top{
+        justify-content: center;
+      }
+    }
     &__burger{
       display: flex;
       margin-left: auto;
+    }
+    &__info {
+      flex-shrink: 0;
+      margin-left: 8px;
+      padding-left: 14px;
+      position: relative;
+      font-weight: 500;
+      font-size: 8.97183px;
+      line-height: 121%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      border-left: 1px solid #D2D2D2;
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: 9px;
+        height: 9px;
+        background-image: url(../img/star.webp);
+        background-size: 100% auto;
+      }
+      &::before {
+        right: 8px;
+        top: 15px;
+        transform: rotate(18.46deg);
+      }
+      &::after {
+        top: -3px;
+        right: 18px;
+        transform: rotate(-16.41deg);
+      }
     }
   }
 

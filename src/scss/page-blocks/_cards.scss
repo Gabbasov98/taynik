@@ -6,6 +6,12 @@
   padding: 34px 30px 30px;
   border: 0.836055px solid #E5E9F2;
   border-radius: 7.52449px;
+  transition: all .3s;
+  &:hover{
+    border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08), 0px 4px 44px rgba(0, 0, 0, 0.08);
+  }
   &__img{
     height: 192px;
     box-shadow: -7px 100px 87px -47px rgba($black, 0.2);
@@ -37,6 +43,13 @@
   border-radius: 6px;
   display: flex;
   flex-direction: column;
+  transition: all .3s;
+  &:hover{
+    border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08), 0px 4px 44px rgba(0, 0, 0, 0.08);
+  }
+
   &__top{
     position: relative;
   }

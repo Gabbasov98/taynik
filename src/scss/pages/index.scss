@@ -15,6 +15,11 @@
       height: auto;
       min-height: 640px;
       padding: 20px 0;
+      &:hover{
+        .main__img{
+          transform: scale(1.1);
+        }
+      }
       &-active{
         padding: 0;
         .main__content{
@@ -53,6 +58,8 @@
     }
   }
   &__inner{
+    overflow: hidden;
+    position: relative;
     border-radius: 30px;
     height: 100%;
     padding: 127px 45px;
@@ -60,10 +67,21 @@
     background-position: center;
     transition: all .3s;
   }
+  &__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease-in-out;
+  }
   &__content{
     max-width: 480px;
     opacity: 0;
     transition: all .5s;
+    position: relative;
+    z-index: 2;
   }
   &__desc{
     font-size: 16px;
@@ -112,18 +130,29 @@
 
 .new{
   padding: 50px 0;
+  overflow: hidden;
   &__slider{
     position: relative;
   }
   .swiper{
     &-container{
-      overflow: hidden;
+
     }
     &-wrapper{
       align-items: stretch;
     }
     &-slide{
       height: auto;
+      @media screen and (min-width: 1150px){
+        opacity: 0;
+        &-active,
+        &-next,
+        &-next+.swiper-slide,
+        &-next+.swiper-slide+.swiper-slide,
+        &-next+.swiper-slide+.swiper-slide+.swiper-slide{
+          opacity: 1;
+        }
+      }
     }
     &-button{
       &-prev,
@@ -266,6 +295,10 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 1150px){
+
 }
 
 @media screen and (max-width: 1100px){
